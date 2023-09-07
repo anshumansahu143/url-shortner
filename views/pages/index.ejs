@@ -1,0 +1,38 @@
+
+  <%- include('../partials/head'); %>
+    <h1>URL list</h1>
+    <form  class="form responsive" action="/url" method="post">
+      <div class="form-group">
+        <label>Enter the url please</label>
+        <input class="form-control" type="text" name="url"/>
+      </div>
+      <div class="form-group"></div><button class="btn btn-primary" type="submit">Submit</button></div>
+    </form>
+    <table class="table responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Redirect Url</th>
+                
+                <th>Visit History</th>
+                <th>Url</th>
+            </tr>
+        </thead>
+        <tbody>
+       
+        <% if(urls){ %>
+        <% urls.forEach(function(url) { %>
+            <tr>
+                <td><%= url.shortId %></td>
+                <td><%= url.redirectUrl %></td>
+                <td><%= url.visitHistory.length %></td>
+                <td>http://localhost:8001/url/<%= url.shortId %></td>
+                
+            </tr>
+          
+        <% }); %>
+        <% } %>
+    </tbody>
+      </table>
+
+  <%- include('../partials/footer'); %>

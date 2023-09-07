@@ -1,0 +1,25 @@
+
+<%- include('../partials/head'); %>
+<h1>Signup</h1>
+<% if(typeof locals.message!=='undefined'){ %>
+    <p><%= message %></p>
+
+<% } %>
+<form  class="form responsive" action="/signup" method="post">
+    <div class="form-group">
+      <label>Name</label>
+      <input class="form-control" type="text" name="name"/>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" type="email" name="email"/>
+       
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input class="form-control" type="password" name="password"/>
+      </div>
+    <div class="form-group"></div><button class="btn btn-primary" type="submit">Submit</button></div>
+  </form>
+
+<%- include('../partials/footer'); %>
